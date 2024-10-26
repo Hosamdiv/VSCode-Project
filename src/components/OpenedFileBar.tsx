@@ -26,7 +26,9 @@ const OpenedFileBar = () => {
           <OpenedFileBarTab key={file.id} file={file} />
         ))}
       </div>
-      {showMenu && <DropMenu position={menuPosition} />}
+      {showMenu && (
+        <DropMenu position={menuPosition} setShowMenu={setShowMenu} />
+      )}
     </div>
   );
 };
