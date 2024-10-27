@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import OpenedFileBarTab from "./OpenedFileBarTab";
 import { useState } from "react";
-import DropMenu from "./ui/ContexrtMene";
+import DropMenu from "./ui/ContextMene";
 
 const OpenedFileBar = () => {
   const { openedFile } = useSelector(({ tree }: RootState) => tree);

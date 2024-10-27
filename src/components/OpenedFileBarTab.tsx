@@ -5,6 +5,7 @@ import CloseIcon from "./SVG/CloseIcon";
 import {
   setClickedFileAction,
   setOpenedFileAction,
+  settabIdToRemoveAction,
 } from "../app/features/fileTreeSlice";
 import { RootState } from "../app/store";
 
@@ -66,7 +67,10 @@ const OpenedFileBarTab = ({ file }: IProps) => {
         file.id === activeTabId ? "border-[#cf6ccf]" : "border-transparent"
       } `}
       onClick={onclicked}
-
+      onContextMenu={e=>{
+        e.preventDefault();
+        dispatch(settabIdToRemoveAction(file.id))
+      }}
     >
       <RenderFileIcon filename={file.name} />
       <span
